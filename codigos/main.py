@@ -27,6 +27,7 @@ while 1:
         elif opcao_nsei == "2":
             if lista == []:
                 print("Nenhum usuario adicionado!")
+            
             else:
                 listar_usuarios(lista)
                 time.sleep(3)
