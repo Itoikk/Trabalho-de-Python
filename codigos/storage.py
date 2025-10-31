@@ -32,3 +32,13 @@ def remover_usuario(indice):
     usuarios = carregar_usuarios()
     usuarios.pop(indice)
     atualizar_usuarios(usuarios)
+
+def atualizar_usuario(indice, nome, email, perfil = "user"):
+    usuarios = carregar_usuarios()
+    usuario = {
+        "nome": nome,
+        "email": email,
+        "perfil": perfil
+    }
+    usuarios[indice] = usuario
+    atualizar_usuarios(usuarios)

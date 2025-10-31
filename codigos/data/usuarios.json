@@ -3,5 +3,10 @@
         "nome": "exemple",
         "email": "exemple@example",
         "perfil": "example"
+    },
+    {
+        "nome": "neymar",
+        "email": "lenda",
+        "perfil": "user"
     }
 ]
