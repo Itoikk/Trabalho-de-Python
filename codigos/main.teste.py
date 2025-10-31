@@ -93,7 +93,7 @@ while True:
                     break
                 nome = input("novo nome: ")
                 if nome == "":
-                    nome == usuarios[indice]["nome"]
+                    nome = usuarios[indice]["nome"]
                 email = input("novo email: ")
                 for usuario in usuarios:
                     if email == usuario["email"]:
@@ -103,7 +103,7 @@ while True:
                     email = usuarios[indice]["email"]
                 perfil = input("novo perfil: ")
                 if perfil == "":
-                    perfil = usuarios[indice][perfil]
+                    perfil = usuarios[indice]["perfil"]
                 atualizar_usuario(indice, nome, email, perfil)
                 print("atualizado!")
                 time.sleep(1)
