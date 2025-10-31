@@ -8,6 +8,8 @@ while True:
     opcao = input("")
     if opcao not in ["1", "2", "3"]:
         sys.exit("Opção inválida!")
+        time.sleep(1)
+        continue
     elif opcao == "1":
         #Usuario
         while True:
@@ -62,15 +64,17 @@ while True:
                     break
                 nome = input("nome: ")
                 if nome != "":
+                    condicao = True
                     for indice, usuario in enumerate(usuarios):
                         if nome == usuario["nome"]:
                             indices.append(indice)
-                            mostrar_usuarios(indices, usuarios)
-                            input()
-                            break
-                    else:
+                            condicao = False
+                    if condicao:
                         print("usuário não encontrado!")
                         time.sleep(1)
+                        break
+                    mostrar_usuarios(indices, usuarios)
+                    input()
                     break
                 else:
                     print("usuário não encontrado!")
@@ -117,5 +121,7 @@ while True:
                 break              
     elif opcao == "2":
         print("Você escolheu Projetos!")
+        time.sleep(1)
     elif opcao == "3":
         print("Você escolheu Tarefas!")
+        time.sleep(1)
