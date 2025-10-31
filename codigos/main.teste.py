@@ -42,7 +42,9 @@ while True:
                     break
             elif opcao == "2":
                 #listar
-                print()
+                listar_usuarios(usuarios)
+                input()
+                break
             elif opcao == "3":
                 indices = []
                 email = input("email: ")

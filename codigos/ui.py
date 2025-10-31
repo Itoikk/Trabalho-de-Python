@@ -26,3 +26,10 @@ def mostrar_usuarios(indices, usuarios):
         print("="*20)
         print(f"nome: {usuarios[indice]["nome"]}\nemail: {usuarios[indice]["email"]}\nperfil: {usuarios[indice]["perfil"]}")
         print("="*20)
+def listar_usuarios(usuarios):
+    for usuario in usuarios:
+        print("="*20)
+        print(f"nome: {usuario["nome"]}")
+        print(f"email: {usuario["email"]}")
+        print(f"perfil: {usuario["perfil"]}")
+        print("="*20)
