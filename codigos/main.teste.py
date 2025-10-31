@@ -11,9 +11,10 @@ while True:
     elif opcao == "1":
         #Usuario
         while True:
+            usuarios = carregar_usuarios()
             menu_usuarios()
             opcao = input("")
-            if opcao not in ["0", "1", "2", "3", "4"]:
+            if opcao not in ["0", "1", "2", "3", "4", "5"]:
                 continue
             if opcao == "0":
                 break
@@ -43,6 +44,37 @@ while True:
                 #listar
                 print()
             elif opcao == "3":
+                indices = []
+                email = input("email: ")
+                if email != "":
+                    for indice, usuario in enumerate(usuarios):
+                        if email == usuario["email"]:
+                            indices.append(indice)
+                            mostrar_usuarios(indices, usuarios)
+                            input()
+                            break
+                    else:
+                        print("usuário não encontrado!")
+                        time.sleep(1)
+                        break
+                    break
+                nome = input("nome: ")
+                if nome != "":
+                    for indice, usuario in enumerate(usuarios):
+                        if nome == usuario["nome"]:
+                            indices.append(indice)
+                            mostrar_usuarios(indices, usuarios)
+                            input()
+                            break
+                    else:
+                        print("usuário não encontrado!")
+                        time.sleep(1)
+                    break
+                else:
+                    print("usuário não encontrado!")
+                    time.sleep(1)
+                    break
+            elif opcao == "4":
                 #atualizar
                 email = input("email: ")
                 for index, usuario in enumerate(usuarios):
@@ -69,7 +101,7 @@ while True:
                 atualizar_usuario(indice, nome, email, perfil)
                 print("atualizado!")
                 time.sleep(1)
-            elif opcao == "4":
+            elif opcao == "5":
                 email = input("email: ")
                 for indice, usuario in enumerate(usuarios):
                     if usuario["email"] == email:
@@ -77,7 +109,6 @@ while True:
                         print("usuário removido!")
                         time.sleep(1)
                         break
-
                 else:
                     print("email não cadastrado!")
                     time.sleep(1)

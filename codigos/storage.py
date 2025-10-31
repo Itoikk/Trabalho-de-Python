@@ -5,7 +5,6 @@ usuarios = []
 
 def carregar_usuarios():
     if not os.path.exists(ARQUIVO):
-        print("erro foi aq")
         return []
     try:
         with open(ARQUIVO, "r", encoding = "utf-8") as f:
