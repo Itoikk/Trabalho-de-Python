@@ -1,6 +1,9 @@
 from ui import *
+from storage import *
+from models import *
+from services import *
 import os, sys, json, time
-from storage import carregar_usuarios, adicionar_usuario, remover_usuario, atualizar_usuario
+
 while True:
     usuarios = carregar_usuarios()
     os.system("cls")
