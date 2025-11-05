@@ -1,8 +1,6 @@
 from ui import *
-from storage import *
-from models import *
 from services import *
-import os, sys, json, time
+import os, sys, time
 
 while True:
     usuarios = carregar_usuarios()
