@@ -1,7 +1,6 @@
 from ui import *
 from services import *
 import os, sys, time
-
 while True:
     usuarios = carregar_usuarios()
     os.system("cls")
@@ -121,8 +120,11 @@ while True:
                     time.sleep(1)
                 break              
     elif opcao_menu == "2":
-        print("Você escolheu Projetos!")
-        time.sleep(1)
+        while True:
+            menu_projetos()
+            opcao_projeto = input("")
+            if opcao_projeto not in ["0", "1", "2", "3", "4", "5"]:
+                continue
     elif opcao_menu == "3":
         print("Você escolheu Tarefas!")
         time.sleep(1)

@@ -33,3 +33,13 @@ def listar_usuarios(usuarios):
         print(f"email: {usuario["email"]}")
         print(f"perfil: {usuario["perfil"]}")
         print("="*20)
+def menu_projetos():
+    os.system("cls")
+    print("Você escolheu Projetos!")
+    print("Opções:")
+    print("0 - Voltar")
+    print("1 - Cadastrar")
+    print("2 - Listar")
+    print("3 - Buscar projeto")
+    print("4 - Atualizar")
+    print("5 - Remover")

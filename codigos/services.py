@@ -1,5 +1,6 @@
 from models import *
 from storage import *
+from utils import *
 def listar_usuarios(lista):
     for indice, usuario in enumerate(lista):
         print(f"nome: {lista[indice]["nome"]}")
