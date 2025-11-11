@@ -125,6 +125,11 @@ while True:
     elif opcao_menu == "2":
         print("Você escolheu Projetos!")
         time.sleep(1)
+        while True:
+            menu_projetos()
     elif opcao_menu == "3":
         print("Você escolheu Tarefas!")
         time.sleep(1)
+        while True:
+            menu_tarefas()
+

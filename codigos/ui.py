@@ -43,3 +43,13 @@ def menu_projetos():
     print("3 - Buscar projeto")
     print("4 - Atualizar")
     print("5 - Remover")
+
+    def menu_tarefas():
+    os.system("cls")
+    print("Você escolheu Tarefas!")
+    print("Opções:")
+    print("0 - Voltar")
+    print("1 - Cadastrar")
+    print("2 - Listar")
+    print("3 - Atualizar")
+    print("4 - Remover")
