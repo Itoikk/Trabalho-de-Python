@@ -1,3 +1,2 @@
 # Trabalho-de-Python
-hello world!
-testando
+pq nao funciona?
