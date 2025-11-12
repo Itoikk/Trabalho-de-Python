@@ -126,7 +126,29 @@ while True:
         print("Você escolheu Projetos!")
         time.sleep(1)
         while True:
+            #Projetos
             menu_projetos()
+            opcao_projetos = input("")
+            if opcao_projetos not in ["0", "1", "2", "3", "4", "5"]:
+                continue
+            if opcao_projetos == "0":
+                break
+            elif opcao_projetos == "1":
+                #Cadastrar projeto
+                nome_projeto = input("nome do projeto: ")
+                if nome_projeto == "":
+                    print("nome do projeto não pode ser vazio!")
+                    time.sleep(1)
+                    continue
+                if nome_projeto == projeto["nome"]:
+                    print("Já existe um projeto com este nome!")
+                    time.sleep(1)
+                    break
+                descricao = input("descrição: ")
+                
+                    break
+
+
     elif opcao_menu == "3":
         print("Você escolheu Tarefas!")
         time.sleep(1)
