@@ -134,7 +134,7 @@ while True:
             if opcao_projetos == "0":
                 break
             elif opcao_projetos == "1":
-                #Cadastrar projeto
+                #Cadastrar projeto(Não funciona ainda!)
                 nome_projeto = input("nome do projeto: ")
                 if nome_projeto == "":
                     print("nome do projeto não pode ser vazio!")
@@ -145,8 +145,30 @@ while True:
                     time.sleep(1)
                     break
                 descricao = input("descrição: ")
+                inicio = input("Digite a data de início(AA/MM/DD):")
+                fim = input("Digite a data de encerramento(AA/MM/DD):")
                 
                     break
+            elif opcao_projetos == "2":
+                #listar projetos
+                print("Tem que criar o dicionário ainda")
+            elif opcao_projetos == "3":
+                #buscar projeto
+                print("Tem que criar o dicionário ainda")
+            elif opcao_projetos == "4":
+                #atualizar projeto
+                print("Tem que criar o dicionário ainda")
+            elif opcao_projetos == "5":
+                #remover projetos
+                print("Tem que criar o dicionário ainda")
+            
+
+
+
+
+
+
+
 
 
     elif opcao_menu == "3":
