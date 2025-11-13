@@ -66,3 +66,9 @@ def listar_projetos(lista):
         print(f"fim: {lista[indice]["fim"]}")
         print(f"descricao: {lista[indice]["descricao"]}")
         print()
+
+
+def remover_projeto(indice):
+    projetos = carregar_projetos()
+    projetos.pop(indice)
+    atualizar_projetos(projetos)
