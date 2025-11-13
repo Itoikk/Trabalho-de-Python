@@ -32,3 +32,14 @@ def atualizar_usuario(indice, nome, email, perfil = "user"):
     }
     usuarios[indice] = usuario
     atualizar_usuarios(usuarios)
+def adicionar_tarefa(titulo, projeto, responsavel, status, prazo):
+    tarefas = carregar_tarefas()
+    tarefa = {
+        "titulo": titulo,
+        "projeto": projeto,
+        "responsavel": responsavel,
+        "status": status,
+        "prazo": prazo
+        }
+    tarefas.append(tarefa)
+    atualizar_tarefas(tarefas)

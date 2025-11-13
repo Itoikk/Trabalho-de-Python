@@ -44,7 +44,7 @@ def menu_projetos():
     print("4 - Atualizar")
     print("5 - Remover")
 
-    def menu_tarefas():
+def menu_tarefas():
     os.system("cls")
     print("Você escolheu Tarefas!")
     print("Opções:")

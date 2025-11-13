@@ -2,6 +2,8 @@ from ui import *
 from storage import *
 from models import *
 from services import *
+from utils import *
+
 import os, sys, json, time
 
 while True:
@@ -147,8 +149,7 @@ while True:
                 descricao = input("descrição: ")
                 inicio = input("Digite a data de início(AA/MM/DD):")
                 fim = input("Digite a data de encerramento(AA/MM/DD):")
-                
-                    break
+                break
             elif opcao_projetos == "2":
                 #listar projetos
                 print("Tem que criar o dicionário ainda")
@@ -161,19 +162,43 @@ while True:
             elif opcao_projetos == "5":
                 #remover projetos
                 print("Tem que criar o dicionário ainda")
-            
-
-
-
-
-
-
-
-
-
     elif opcao_menu == "3":
         print("Você escolheu Tarefas!")
-        time.sleep(1)
         while True:
             menu_tarefas()
+            opcao_tarefas = input()
+            if opcao_tarefas not in ["0", "1", "3", "4"]:
+                print("Opção inválida!")
+                time.sleep(1)
+                continue
+            if opcao_tarefas == "0":
+                break
+            if  opcao_tarefas == "1":
+                titulo_tarefa = input("nome: ")
+                if titulo_tarefa == "":
+                    print("o título não deve ser vazio!")
+                    time.sleep(1)
+                    break
+                projeto_tarefa = input("projeto: ")
 
+
+                responsavel_tarefa = input("responsável: ")
+                if responsavel_tarefa == "":
+                    print("a tarefa deve ter um responsável!")
+                    time.sleep(1)
+                    break
+                status_tarefa = padronizar_texto(input("status: "))
+                if status_tarefa not in ["pendente", "em andamento", "concluida"]:
+                    print("status inválido!")
+                    time.sleep(1)
+                    break
+                print("ex: YYYY-MM-DD")
+                prazo_tarefa = input("prazo: ")
+                if not data_valida(prazo_tarefa):
+                    print("data inválida")
+                    time.sleep(1)
+                    break
+                adicionar_tarefa(titulo_tarefa, projeto_tarefa, responsavel_tarefa, status_tarefa, prazo_tarefa)
+                print("Tarefa adicionada!")
+                time.sleep(1)
+                break
