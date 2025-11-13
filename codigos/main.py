@@ -5,9 +5,10 @@ from services import *
 from utils import *
 
 import os, sys, json, time
-
+projetos=[]
 while True:
     usuarios = carregar_usuarios()
+    tarefas = carregar_tarefas()
     os.system("cls")
     menu_inicio()
     opcao_menu = input("")
@@ -129,6 +130,7 @@ while True:
         time.sleep(1)
         while True:
             #Projetos
+            projetos = carregar_projetos()
             menu_projetos()
             opcao_projetos = input("")
             if opcao_projetos not in ["0", "1", "2", "3", "4", "5"]:
@@ -142,17 +144,26 @@ while True:
                     print("nome do projeto não pode ser vazio!")
                     time.sleep(1)
                     continue
-                if nome_projeto == projeto["nome"]:
-                    print("Já existe um projeto com este nome!")
-                    time.sleep(1)
-                    break
+                for projeto in projetos:
+                    if nome_projeto == projeto["nome"]:
+                        print("Já existe um projeto com este nome!")
+                        time.sleep(1)
+                        break
                 descricao = input("descrição: ")
                 inicio = input("Digite a data de início(AA/MM/DD):")
                 fim = input("Digite a data de encerramento(AA/MM/DD):")
                 break
+                inicio_projeto = input("Digite a data de início(AA/MM/DD):")
+                fim_projeto = input("Digite a data de encerramento(AA/MM/DD):")
+                adicionar_projeto(nome_projeto, inicio_projeto, fim_projeto, descricao)
+                break
+            
             elif opcao_projetos == "2":
                 #listar projetos
-                print("Tem que criar o dicionário ainda")
+                listar_projetos(projetos)
+                input()
+                break
+
             elif opcao_projetos == "3":
                 #buscar projeto
                 print("Tem que criar o dicionário ainda")
@@ -165,9 +176,10 @@ while True:
     elif opcao_menu == "3":
         print("Você escolheu Tarefas!")
         while True:
+            tarefas = carregar_tarefas()
             menu_tarefas()
             opcao_tarefas = input()
-            if opcao_tarefas not in ["0", "1", "3", "4"]:
+            if opcao_tarefas not in ["0", "1", "2", "3", "4"]:
                 print("Opção inválida!")
                 time.sleep(1)
                 continue
@@ -202,3 +214,15 @@ while True:
                 print("Tarefa adicionada!")
                 time.sleep(1)
                 break
+            if opcao_tarefas == "2":
+                while True:
+                    menu_listar_tarefas()
+                    opcao_listar_tarefas = input()
+                    if opcao_listar_tarefas not in ["0", "1", "2", "3", "4"]:
+                        print("Opcão inválida")
+                        time.sleep(1)
+                        continue
+                    if opcao_listar_tarefas == "0":
+                        break
+                    if opcao_listar_tarefas == "1":
+                        listar_tarefas(tarefas)
