@@ -182,7 +182,31 @@ while True:
 
             elif opcao_projetos == "4":
                 #atualizar projeto
-                print("Tem que criar o dicionário ainda")
+                nome_projeto1 = input("nome: ")
+                for index, projeto in enumerate(projetos):
+                    if projeto["nome"] == nome_projeto1:
+                        indice = index
+                        break
+                else:
+                    print("nome do projeto não encontrado")
+                    time.sleep(1)
+                    break
+                nome_projeto1 = input("novo nome do projeto: ")
+                if nome_projeto1 == "":
+                    nome_projeto1 = projetos[indice]["nome"]
+                inicio_projeto1 = input("nova data de inicio: ")
+                if inicio_projeto1 == "":
+                    inicio_projeto1 = projetos[indice]["inicio"]
+                fim_projeto1 = input("nova data de encerramento: ")
+                if fim_projeto1 == "":
+                    fim_projeto1 = projetos[indice]["fim"]
+                descricao_projeto1 = input("nova descricao: ")
+                if descricao_projeto1 == "":
+                    descricao_projeto1 = projetos[indice]["descricao"]
+                atualizar_projeto(indice, nome_projeto1, inicio_projeto1, fim_projeto1, descricao_projeto1)
+                print("atualizado!")
+                time.sleep(1)
+
 
 
 
