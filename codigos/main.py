@@ -220,9 +220,7 @@ while True:
 
             elif opcao_projetos == "5":
                 #remover projetos
-<<<<<<< HEAD
                 print("Tem que criar o dicionário ainda")
-=======
                 nome_projeto = input("nome: ")
                 for indice, projeto in enumerate(projetos):
                     if projeto["nome"] == nome_projeto:
@@ -244,7 +242,6 @@ while True:
 
 
 
->>>>>>> 4ff2743cf96e37c23626452c180311f90e01fbb6
     elif opcao_menu == "3":
         print("Você escolheu Tarefas!")
         while True:
