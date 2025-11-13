@@ -53,3 +53,13 @@ def menu_tarefas():
     print("2 - Listar")
     print("3 - Atualizar")
     print("4 - Remover")
+
+def menu_listar_tarefas():
+    os.system("cls")
+    print("Como você quer listar?")
+    print("Opções:")
+    print("0 - Voltar")
+    print("1 - Todas")
+    print("2 - Por Projetos")
+    print("3 - Por Responsável")
+    print("4 - Por Status")
