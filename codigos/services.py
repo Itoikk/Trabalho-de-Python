@@ -32,3 +32,37 @@ def atualizar_usuario(indice, nome, email, perfil = "user"):
     }
     usuarios[indice] = usuario
     atualizar_usuarios(usuarios)
+
+
+def adicionar_projeto(nome, inicio, fim, descricao = "Descricao vazia"):
+    projetos = carregar_projetos()
+    projeto = {
+        "nome": nome,
+        "inicio": inicio,
+        "fim": fim,
+        "descricao": descricao
+    }
+    projetos.append(projeto)
+    atualizar_projetos(projetos)
+
+
+def atualizar_projeto(indice, nome, inicio, fim, descricao = "Descricao vazia"):
+    projetos = carregar_projetos()
+    projeto = {
+        "nome": nome,
+        "inicio": inicio,
+        "fim": fim,
+        "descicao": descricao
+    }
+    projetos[indice] = projeto
+    atualizar_projetos(projetos)
+
+
+
+def listar_projetos(lista):
+    for indice, projeto in enumerate(lista):
+        print(f"nome: {lista[indice]["nome"]}")
+        print(f"inicio: {lista[indice]["inicio"]}")
+        print(f"fim: {lista[indice]["fim"]}")
+        print(f"descricao: {lista[indice]["descricao"]}")
+        print()

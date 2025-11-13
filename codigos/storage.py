@@ -1,7 +1,7 @@
 import json
 import os
-ARQUIVO = "codigos/data/usuarios.json"
-ARQUIVO2= "codigos/data/projetos.json"
+ARQUIVO = "Trabalho-de-Python/codigos/data/usuarios.json"
+ARQUIVO2= "Trabalho-de-Python/codigos/data/projetos.json"
 usuarios = []
 projetos= []
 

@@ -3,7 +3,7 @@ from storage import *
 from models import *
 from services import *
 import os, sys, json, time
-
+projetos=[]
 while True:
     usuarios = carregar_usuarios()
     os.system("cls")
@@ -127,6 +127,7 @@ while True:
         time.sleep(1)
         while True:
             #Projetos
+            projetos = carregar_projetos()
             menu_projetos()
             opcao_projetos = input("")
             if opcao_projetos not in ["0", "1", "2", "3", "4", "5"]:
@@ -140,19 +141,23 @@ while True:
                     print("nome do projeto não pode ser vazio!")
                     time.sleep(1)
                     continue
-                if nome_projeto == projeto["nome"]:
-                    print("Já existe um projeto com este nome!")
-                    time.sleep(1)
-                    break
+                for projeto in projetos:
+                    if nome_projeto == projeto["nome"]:
+                        print("Já existe um projeto com este nome!")
+                        time.sleep(1)
+                        break
                 descricao = input("descrição: ")
-                inicio = input("Digite a data de início(AA/MM/DD):")
-                fim = input("Digite a data de encerramento(AA/MM/DD):")
-                
+                inicio_projeto = input("Digite a data de início(AA/MM/DD):")
+                fim_projeto = input("Digite a data de encerramento(AA/MM/DD):")
+                adicionar_projeto(nome_projeto, inicio_projeto, fim_projeto, descricao)
                 break
             
             elif opcao_projetos == "2":
                 #listar projetos
-                print("Tem que criar o dicionário ainda")
+                listar_projetos(projetos)
+                input()
+                break
+
             elif opcao_projetos == "3":
                 #buscar projeto
                 print("Tem que criar o dicionário ainda")
