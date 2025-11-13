@@ -148,7 +148,8 @@ while True:
                 inicio = input("Digite a data de início(AA/MM/DD):")
                 fim = input("Digite a data de encerramento(AA/MM/DD):")
                 
-                    break
+                break
+            
             elif opcao_projetos == "2":
                 #listar projetos
                 print("Tem que criar o dicionário ainda")
