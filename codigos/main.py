@@ -166,13 +166,85 @@ while True:
 
             elif opcao_projetos == "3":
                 #buscar projeto
-                print("Tem que criar o dicionário ainda")
+                indices = []
+                nome_projeto = input("nome do projeto: ")
+                if nome_projeto != "":
+                    for indice, projeto in enumerate(projetos):
+                        if nome_projeto == projeto["nome"]:
+                            indices.append(indice)
+                            mostrar_projetos(indices, projetos)
+                            input()
+                            break
+                    else:
+                        print("projeto não encontrado!")
+                        time.sleep(1)
+                        break
+                    break
+                
+
+
+
+
+
             elif opcao_projetos == "4":
                 #atualizar projeto
-                print("Tem que criar o dicionário ainda")
+                nome_projeto1 = input("nome: ")
+                for index, projeto in enumerate(projetos):
+                    if projeto["nome"] == nome_projeto1:
+                        indice = index
+                        break
+                else:
+                    print("nome do projeto não encontrado")
+                    time.sleep(1)
+                    break
+                nome_projeto1 = input("novo nome do projeto: ")
+                if nome_projeto1 == "":
+                    nome_projeto1 = projetos[indice]["nome"]
+                inicio_projeto1 = input("nova data de inicio: ")
+                if inicio_projeto1 == "":
+                    inicio_projeto1 = projetos[indice]["inicio"]
+                fim_projeto1 = input("nova data de encerramento: ")
+                if fim_projeto1 == "":
+                    fim_projeto1 = projetos[indice]["fim"]
+                descricao_projeto1 = input("nova descricao: ")
+                if descricao_projeto1 == "":
+                    descricao_projeto1 = projetos[indice]["descricao"]
+                atualizar_projeto(indice, nome_projeto1, inicio_projeto1, fim_projeto1, descricao_projeto1)
+                print("atualizado!")
+                time.sleep(1)
+
+
+
+
+
+
             elif opcao_projetos == "5":
                 #remover projetos
+<<<<<<< HEAD
                 print("Tem que criar o dicionário ainda")
+=======
+                nome_projeto = input("nome: ")
+                for indice, projeto in enumerate(projetos):
+                    if projeto["nome"] == nome_projeto:
+                        remover_projeto(indice)
+                        print("projeto removido!")
+                        time.sleep(1)
+                        break
+                else:
+                    print("projeto não cadastrado!")
+                    time.sleep(1)
+                break         
+            
+
+
+
+
+
+
+
+
+
+>>>>>>> 4ff2743cf96e37c23626452c180311f90e01fbb6
     elif opcao_menu == "3":
         print("Você escolheu Tarefas!")
         while True:

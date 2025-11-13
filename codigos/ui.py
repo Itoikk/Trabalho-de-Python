@@ -33,6 +33,8 @@ def listar_usuarios(usuarios):
         print(f"email: {usuario["email"]}")
         print(f"perfil: {usuario["perfil"]}")
         print("="*20)
+
+
 def menu_projetos():
     os.system("cls")
     print("Você escolheu Projetos!")
@@ -43,6 +45,15 @@ def menu_projetos():
     print("3 - Buscar projeto")
     print("4 - Atualizar")
     print("5 - Remover")
+
+def mostrar_projetos(indices, projetos):
+    if indices == []:
+        return
+    for indice in indices:
+        print()
+        print("="*20)
+        print(f"nome: {projetos[indice]["nome"]}\ninicio {projetos[indice]["inicio"]}\nfim: {projetos[indice]["fim"]}\ndescricao: {projetos[indice]["descricao"]}")
+        print("="*20)
 
 def menu_tarefas():
     os.system("cls")

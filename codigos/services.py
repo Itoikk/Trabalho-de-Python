@@ -78,6 +78,7 @@ def listar_projetos(lista):
         print(f"descricao: {lista[indice]["descricao"]}")
         print()
 
+<<<<<<< HEAD
 def listar_tarefas(lista):
     for tarefa in lista:
         print(f"Título: {tarefa["titulo"]}")
@@ -87,3 +88,10 @@ def listar_tarefas(lista):
         print(f"Prazo: {tarefa["prazo"]}")
         print()
         print()
+=======
+
+def remover_projeto(indice):
+    projetos = carregar_projetos()
+    projetos.pop(indice)
+    atualizar_projetos(projetos)
+>>>>>>> 4ff2743cf96e37c23626452c180311f90e01fbb6
