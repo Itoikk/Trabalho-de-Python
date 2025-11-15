@@ -138,7 +138,7 @@ while True:
             if opcao_projetos == "0":
                 break
             elif opcao_projetos == "1":
-                #Cadastrar projeto(Não funciona ainda!)
+                #Cadastrar projeto
                 nome_projeto = input("nome do projeto: ")
                 if nome_projeto == "":
                     print("nome do projeto não pode ser vazio!")
@@ -150,12 +150,17 @@ while True:
                         time.sleep(1)
                         break
                 descricao = input("descrição: ")
-                inicio = input("Digite a data de início(AA/MM/DD):")
-                fim = input("Digite a data de encerramento(AA/MM/DD):")
-                break
-                inicio_projeto = input("Digite a data de início(AA/MM/DD):")
-                fim_projeto = input("Digite a data de encerramento(AA/MM/DD):")
-                adicionar_projeto(nome_projeto, inicio_projeto, fim_projeto, descricao)
+                inicio = input("Digite a data de início(YYYY/MM/DD):")
+                if not data_valida(inicio):
+                    print("data inválida")
+                    time.sleep(1)
+                    break
+                fim = input("Digite a data de encerramento(YYYY/MM/DD):")
+                if not data_valida(fim):
+                    print("data inválida")
+                    time.sleep(1)
+                    break
+                adicionar_projeto(nome_projeto, inicio, fim, descricao)
                 break
             
             elif opcao_projetos == "2":
@@ -200,10 +205,18 @@ while True:
                 nome_projeto1 = input("novo nome do projeto: ")
                 if nome_projeto1 == "":
                     nome_projeto1 = projetos[indice]["nome"]
-                inicio_projeto1 = input("nova data de inicio: ")
+                inicio_projeto1 = input("nova data de inicio(YYYY/MM/DD): ")
+                if not data_valida(inicio_projeto1):
+                    print("data inválida")
+                    time.sleep(1)
+                    break
                 if inicio_projeto1 == "":
                     inicio_projeto1 = projetos[indice]["inicio"]
-                fim_projeto1 = input("nova data de encerramento: ")
+                fim_projeto1 = input("nova data de encerramento(YYYY/MM/DD): ")
+                if not data_valida(fim_projeto1):
+                    print("data inválida")
+                    time.sleep(1)
+                    break
                 if fim_projeto1 == "":
                     fim_projeto1 = projetos[indice]["fim"]
                 descricao_projeto1 = input("nova descricao: ")
@@ -220,7 +233,6 @@ while True:
 
             elif opcao_projetos == "5":
                 #remover projetos
-                print("Tem que criar o dicionário ainda")
                 nome_projeto = input("nome: ")
                 for indice, projeto in enumerate(projetos):
                     if projeto["nome"] == nome_projeto:
