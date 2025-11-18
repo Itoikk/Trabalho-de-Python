@@ -493,4 +493,4 @@ while True:
                     print("tarefa não encontrada!")
                     time.sleep(1)
                 break
-            print("teste")
+            
