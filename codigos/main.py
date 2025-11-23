@@ -307,6 +307,30 @@ while True:
                         break
                     if opcao_listar_tarefas == "1":
                         listar_tarefas(tarefas)
+                        input()
+                        break
+                    if opcao_listar_tarefas == "2":
+                        projeto_tarefa=input("projeto: ")
+                        listar_tarefas_por_projetos(tarefas, projeto_tarefa)
+                        input()
+                        break
+                    if opcao_listar_tarefas == "3":
+                        responsavel_tarefa=input("responsável: ")
+                        listar_tarefas_responsavel(tarefas, responsavel_tarefa)
+                        input()
+                        break
+                    if opcao_listar_tarefas == "4":
+                        status_tarefa=padronizar_texto(input("status: "))
+                        print()
+
+                        if status_tarefa not in ["pendente", "em andamento", "concluida"]:
+                            print("status inválido!")
+                            time.sleep(1)
+                            break
+                        listar_tarefas_por_status(tarefas, status_tarefa)
+                        input()
+                        break  
+
 
             if opcao_tarefas == "3":
                 #atualizar tarefas

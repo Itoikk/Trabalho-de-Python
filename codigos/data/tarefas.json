@@ -12,5 +12,12 @@
         "responsavel": "gustavo",
         "status": "em andamento",
         "prazo": "2025/12/13"
+    },
+    {
+        "titulo": "Tarefa Python",
+        "projeto": "ProjetoPBC",
+        "responsavel": "Ricardo",
+        "status": "em andamento",
+        "prazo": "2025/12/01"
     }
 ]

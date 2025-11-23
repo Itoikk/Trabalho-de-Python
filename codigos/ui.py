@@ -60,7 +60,7 @@ def menu_tarefas():
     print("Você escolheu Tarefas!")
     print("Opções:")
     print("0 - Voltar")
-    print("1 - Cadastrar")
+    print("1 - Adicionar")
     print("2 - Listar")
     print("3 - Atualizar")
     print("4 - Remover")
