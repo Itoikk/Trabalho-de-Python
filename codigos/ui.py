@@ -88,3 +88,11 @@ def menu_atualizar_tarefa():
     print("5 - Prazo")
     print("6 - concluir tarefa")
     print("7 - reabrir tarefa")
+
+
+def interface():
+    print("")
+    print("="*20)
+    print("RESUMO POR PROJETO")
+    print("="*20)
+    print("")
