@@ -67,14 +67,26 @@ print("")
 
 #Tarefas concluidas no prazo
 
-dia_atual=datetime.now().strftime("%Y-%m-%d")
+dia_atual=datetime.now()
 for projeto in dados1:
     contadora_projetos_conc=0
     for tarefa in dados3:
         if projeto['nome']==tarefa['projeto']:
             if tarefa['status']=='concluida':
-                tarefa['prazo']=datetime.strftime(tarefa['prazo'], "%Y-%m-%d")
-                if tarefa['prazo']<=dia_atual:
+                tarefa['prazo']=datetime.strptime(tarefa['prazo'], "%Y/%m/%d")
+                if tarefa['prazo']>=dia_atual:
                     contadora_projetos_conc+=1
     print(f"Número de tarefas concluídas no prazo no projeto {projeto['nome']}: {contadora_projetos_conc}")
+print("")
+#Tarefas atrasadas
+
+for projeto in dados1:
+    contadora_projetos_pend=0
+    for tarefa in dados3:
+        if projeto['nome']==tarefa['projeto']:
+            if tarefa['status']=='em andamento' or tarefa['status']=='pendente':
+                tarefa['prazo']=datetime.strptime(tarefa['prazo'], "%Y/%m/%d")
+                if tarefa['prazo']<=dia_atual:
+                    contadora_projetos_pend+=1
+    print(f"Número de tarefas expiradas no projeto {projeto['nome']}: {contadora_projetos_pend}")
 
